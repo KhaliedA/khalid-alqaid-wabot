@@ -1,13 +1,89 @@
-{
-  "name": "khalied-alqaid-wabot",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
+[
+  {
+    "id": "tab_treatment_ops_final",
+    "type": "tab",
+    "label": "Treatment (Ops)",
+    "disabled": false,
+    "info": ""
   },
-  "dependencies": {
-    "whatsapp-web.js": "^1.20.0",
-    "qrcode-terminal": "^0.12.0",
-    "express": "^4.18.2"
+
+  {
+    "id": "ui_tab_treatment_ops_final",
+    "type": "ui_tab",
+    "z": "",
+    "name": "Treatment Room",
+    "icon": "fa-stethoscope",
+    "disabled": false,
+    "hidden": false
+  },
+
+  {
+    "id": "grp_a_static_icons",
+    "type": "ui_group",
+    "z": "",
+    "name": "A · Static Icons",
+    "tab": "ui_tab_treatment_ops_final",
+    "order": 1,
+    "disp": true,
+    "width": "24",
+    "collapse": false
+  },
+  {
+    "id": "grp_b_task_modals",
+    "type": "ui_group",
+    "z": "",
+    "name": "B · Task Modals",
+    "tab": "ui_tab_treatment_ops_final",
+    "order": 2,
+    "disp": true,
+    "width": "24",
+    "collapse": false
+  },
+  {
+    "id": "grp_c_fixed_card",
+    "type": "ui_group",
+    "z": "",
+    "name": "C · Treatment Card (Fixed Text)",
+    "tab": "ui_tab_treatment_ops_final",
+    "order": 3,
+    "disp": true,
+    "width": "24",
+    "collapse": false
+  },
+
+  {
+    "id": "tpl_a_icons_only",
+    "type": "ui_template",
+    "z": "tab_treatment_ops_final",
+    "group": "grp_a_static_icons",
+    "name": "A · Static Icons (no logic)",
+    "order": 0,
+    "width": "24",
+    "height": "2",
+    "format": "<style>.a-wrap{display:flex;gap:10px;flex-wrap:wrap}.a-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;width:110px;height:84px;border:1px solid #E5EAF2;border-radius:14px;background:#fff}.a-ico{font-size:26px;margin-bottom:6px}.a-lbl{font-weight:800;color:#0F172A;font-size:13px}</style><div class='a-wrap'><div class='a-tile'><div class='a-ico'>⏸️</div><div class='a-lbl'>Pause</div></div><div class='a-tile'><div class='a-ico'>🤝</div><div class='a-lbl'>Hand-off</div></div><div class='a-tile'><div class='a-ico'>🔔</div><div class='a-lbl'>Alerts</div></div><div class='a-tile'><div class='a-ico'>💊</div><div class='a-lbl'>Meds</div></div><div class='a-tile'><div class='a-ico'>🧪</div><div class='a-lbl'>Lab</div></div><div class='a-tile'><div class='a-ico'>🩻</div><div class='a-lbl'>Imaging</div></div></div>"
+  },
+
+  {
+    "id": "tpl_b_toolbar_and_modals",
+    "type": "ui_template",
+    "z": "tab_treatment_ops_final",
+    "group": "grp_b_task_modals",
+    "name": "B · Icons + 4 Modals (no <script>)",
+    "order": 1,
+    "width": "24",
+    "height": "6",
+    "format": "<style>.b-toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.b-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;width:120px;height:92px;border:1px solid #E5EAF2;border-radius:14px;background:#fff;cursor:pointer}.b-ico{font-size:28px;margin-bottom:6px}.b-lbl{font-weight:800;color:#0F172A;font-size:13px}.b-hint{color:#64748B;font-size:11px}.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:9999}.sheet{width:min(920px,95vw);max-height:88vh;overflow:auto;background:#fff;border:1px solid #E5EAF2;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.18)}.head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #E5EAF2}.title{font-weight:800;color:#0F172A}.body{padding:14px 16px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.input,.select,textarea{padding:8px 10px;border:1px solid #E5EAF2;border-radius:10px;background:#fff}.btn{padding:8px 12px;border:1px solid #E5EAF2;border-radius:10px;background:#EFF6FF;color:#0F2D57;cursor:pointer}.list{display:flex;flex-direction:column;border:1px dashed #E5EAF2;border-radius:12px;margin-top:10px}.item{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px;border-bottom:1px dashed #E5EAF2}.item:last-child{border-bottom:0}.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid #E5EAF2;border-radius:999px;background:#fff}.tabbar{display:flex;gap:8px;margin-bottom:10px}.tab{padding:6px 12px;border:1px solid #E5EAF2;border-radius:999px;background:#fff;cursor:pointer}.tab.active{background:#EFF6FF;border-color:#C8DAFF;color:#0F2D57;font-weight:700}.close{background:#fff;border:1px solid #E5EAF2;border-radius:10px;padding:6px 10px;cursor:pointer}.steps{display:flex;gap:8px;margin-bottom:10px}.step{padding:6px 10px;border:1px solid #E5EAF2;border-radius:999px;font-size:12px}.step.active{background:#E9F5FF;border-color:#2E6CB8;color:#113461;font-weight:700}</style><div class='b-toolbar' ng-init='pp=false;cb=false;obs=false;iv=false;tab=\"inprocess\";ivStep=1;preview={name:\"Sara Ahmed\",age:33,id:\"221144\",ticket:\"A17\"};skipped=[{ticket:\"A05\",id:\"9988\",name:\"Ali N.\",status:\"skipped\"}];inproc=[{ticket:\"B12\",id:\"7766\",name:\"Lama R.\",status:\"in-process\"},{ticket:\"C03\",id:\"6655\",name:\"Hani S.\",status:\"in-process\"}];done=[{ticket:\"A10\",id:\"3322\",name:\"Khaled K.\",doneAt:\"10:05\"}]'> <div class='b-tile' ng-click='pp=true'><div class='b-ico'>🔍</div><div class='b-lbl'>Patient Preview</div><div class='b-hint'>at a glance</div></div> <div class='b-tile' ng-click='cb=true'><div class='b-ico'>📁</div><div class='b-lbl'>Cases</div><div class='b-hint'>skipped/in-proc/done</div></div> <div class='b-tile' ng-click='obs=true'><div class='b-ico'>👁</div><div class='b-lbl'>Observation</div><div class='b-hint'>quick note</div></div> <div class='b-tile' ng-click='iv=true'><div class='b-ico'>💉</div><div class='b-lbl'>IV</div><div class='b-hint'>wizard</div></div> </div> <!-- 🔍 Patient Preview --> <div class='modal' ng-show='pp'><div class='sheet'><div class='head'><div class='title'>Patient Preview</div><button class='close' ng-click='pp=false'>Close ✕</button></div><div class='body'><div class='list'><div class='item'><span class='badge'>Name <b>{{preview.name}}</b></span><span class='badge'>Age <b>{{preview.age}}</b></span><span class='badge'>ID <b>{{preview.id}}</b></span><span class='badge'>Ticket <b>{{preview.ticket}}</b></span></div></div><div class='row' style='margin-top:10px'><input class='input' style='flex:1' ng-model='pp_q' placeholder='Scan / Enter ID / Ticket / Phone'><button class='btn' ng-click='send({topic:\"preview.scan\",payload:{q:(pp_q||\"\")}})'>Scan</button><button class='btn' ng-click='send({topic:\"preview.confirm\"})'>Confirm</button></div></div></div></div> <!-- 📁 Cases --> <div class='modal' ng-show='cb'><div class='sheet'><div class='head'><div class='title'>Cases</div><button class='close' ng-click='cb=false'>Close ✕</button></div><div class='body'><div class='tabbar'><button class='tab' ng-class=\"{active:tab==='skipped'}\" ng-click=\"tab='skipped'\">Skipped</button><button class='tab' ng-class=\"{active:tab==='inprocess'}\" ng-click=\"tab='inprocess'\">In-Process</button><button class='tab' ng-class=\"{active:tab==='complete'}\" ng-click=\"tab='complete'\">Complete</button></div><div class='list' ng-if='(tab===\"skipped\"&&skipped.length)||(tab===\"inprocess\"&&inproc.length)||(tab===\"complete\"&&done.length)'><div class='item' ng-repeat='r in (tab===\"skipped\"?skipped:(tab===\"inprocess\"?inproc:done)) track by $index'><span class='badge'>Ticket <b>{{r.ticket}}</b></span><span class='badge'>ID <b>{{r.id}}</b></span><span class='badge'>Name <b>{{r.name}}</b></span><span class='badge' ng-if='tab!=\"complete\"'>Status <b>{{r.status||tab}}</b></span><div class='row'><button class='btn' ng-if='tab!=\"complete\"' ng-click='send({topic:\"cases.recall\",payload:{ticket:r.ticket}})'>Recall</button><button class='btn' ng-if='tab===\"skipped\"' ng-click='send({topic:\"cases.hide\",payload:{ticket:r.ticket}})'>Hide</button><button class='btn' ng-if='tab===\"inprocess\"' ng-click='send({topic:\"cases.complete\",payload:{ticket:r.ticket}})'>Complete</button></div></div></div><div class='row' ng-if='(tab===\"skipped\"&&!skipped.length)||(tab===\"inprocess\"&&!inproc.length)||(tab===\"complete\"&&!done.length)'><em style='color:#94A3B8'>No records.</em></div></div></div></div> <!-- 👁 Observation --> <div class='modal' ng-show='obs'><div class='sheet'><div class='head'><div class='title'>Observation</div><button class='close' ng-click='obs=false'>Close ✕</button></div><div class='body'><div class='row'><select class='select' ng-model='obs_symptom'><option value=''>Symptom…</option><option>Fever</option><option>Cough</option><option>Chest pain</option><option>Headache</option></select><input class='input' style='width:120px' ng-model='obs_bp' placeholder='BP 120/80'><input class='input' style='width:120px' ng-model='obs_hr' placeholder='HR'><input class='input' style='width:120px' ng-model='obs_temp' placeholder='Temp °C'></div><div class='row' style='margin-top:8px'><textarea class='input' style='min-height:86px;flex:1' ng-model='obs_note' placeholder='Clinical note'></textarea></div><div class='row' style='justify-content:flex-end;margin-top:8px'><button class='btn' ng-click='send({topic:\"observation.save\",payload:{symptom:obs_symptom||null,bp:obs_bp||null,hr:obs_hr||null,temp:obs_temp||null,note:obs_note||null}})'>Save Observation</button></div><div class='list' style='margin-top:10px'><div class='item'><span class='badge'>Ticket <b>X11</b></span><span class='badge'>ID <b>5500</b></span><span class='badge'>Note <b>Fever 38.5</b></span></div><div class='item'><span class='badge'>Ticket <b>X12</b></span><span class='badge'>ID <b>5511</b></span><span class='badge'>Note <b>BP recheck</b></span></div></div></div></div></div> <!-- 💉 IV Wizard --> <div class='modal' ng-show='iv'><div class='sheet'><div class='head'><div class='title'>IV Wizard</div><button class='close' ng-click='iv=false'>Close ✕</button></div><div class='body' ng-init='ivStep=1'><div class='steps'><div class='step' ng-class=\"{active:ivStep===1}\">1 Drug</div><div class='step' ng-class=\"{active:ivStep===2}\">2 Dose</div><div class='step' ng-class=\"{active:ivStep===3}\">3 Rate</div><div class='step' ng-class=\"{active:ivStep===4}\">4 Verify</div></div><div ng-show='ivStep===1' class='list'><div class='item'><select class='select' ng-model='iv_drug'><option value=''>Drug…</option><option>Saline 0.9%</option><option>Glucose 5%</option><option>Ceftriaxone</option></select><select class='select' ng-model='iv_route'><option value=''>Route…</option><option>IV</option><option>IV infusion</option></select></div></div><div ng-show='ivStep===2' class='list'><div class='item'><input class='input' style='width:160px' ng-model='iv_dose' placeholder='Dose (mg)'><input class='input' style='width:160px' ng-model='iv_volume' placeholder='Volume (ml)'></div></div><div ng-show='ivStep===3' class='list'><div class='item'><input class='input' style='width:160px' ng-model='iv_rate' placeholder='Rate (ml/hr)'><select class='select' ng-model='iv_device'><option value=''>Device…</option><option>Gravity</option><option>Pump</option></select></div></div><div ng-show='ivStep===4' class='list'><div class='item'><input class='input' ng-model='iv_notes' placeholder='Notes (optional)' style='flex:1'></div></div><div class='row' style='justify-content:space-between;margin-top:10px'><div class='row'><button class='btn' ng-disabled='ivStep===1' ng-click='ivStep=ivStep-1'>Back</button><button class='btn' ng-disabled='ivStep===4||!iv_drug' ng-click='ivStep=ivStep+1'>Next</button></div><div class='row'><button class='btn' ng-if='ivStep===4' ng-click='send({topic:\"iv.submit\",payload:{drug:iv_drug||null,route:iv_route||null,dose:iv_dose||null,volume:iv_volume||null,rate:iv_rate||null,device:iv_device||null,notes:iv_notes||null}})'>Start IV</button></div></div></div></div></div>"
+  },
+
+  {
+    "id": "tpl_c_fixed_text_card",
+    "type": "ui_template",
+    "z": "tab_treatment_ops_final",
+    "group": "grp_c_fixed_card",
+    "name": "C · Treatment Card (exact fixed text)",
+    "order": 2,
+    "width": "24",
+    "height": "8",
+    "format": "<style>.fixed-card{white-space:pre-wrap;border:1px solid #E5EAF2;border-radius:14px;background:#fff;padding:12px;font-family:Consolas,Menlo,monospace;font-size:14px;line-height:1.35}</style><div class='fixed-card'>\n> Patient: Khaled Khamis Saif Alisaee\n> Age: 55\n> Gender: Male\n> ID: 3322\n> Code: XZ-91\n> Ticket: A10\n> Screens: 1, 2\n> Total Orders: 3\n> Active Orders: 3\n>  * Blood Pressure (BP)\n>  * ECG (ECG)\n>  * Lab — CBC (LAB)\n</div>"
   }
-}
+]
